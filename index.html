@@ -6,29 +6,36 @@
   <title>Привет, турист!</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .bg-custom {
-      /* Встроенное фоновое изображение пляжа */
-      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAMACAYAAAC6fe+/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5c2lj2AAA'); /* Полный код изображения прописан ниже в стиле */
+    /* Настройки для фона: картинка вшита прямо сюда в формате Base64 */
+    body {
+      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAMACAMDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJrcnGRo0G1dH213j5GVmJSlpcVZ3hJgvG8R5ZmJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO00b3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eXc3Z3Dec556556+frx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO00b3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eXc3Z3Dec556556+frx8vP09fb3+Pn6/9oADAMBAcom/"></style>
+    <style>
+    /* Дополнительные стили для улучшения читаемости */
+    .bg-blur-overlay {
+      background-color: rgba(0, 0, 0, 0.25); /* Легкое затемнение фона */
+      backdrop-filter: blur(2px); /* Легкое размытие фона */
+    }
+    .text-shadow {
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
   </style>
 </head>
-<body class="bg-cover bg-center bg-no-repeat min-h-screen text-white font-sans flex flex-col items-center justify-center p-4" 
-      style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAACACAMAAAC2vMbgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAADUExURQAAAKoNAC4AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA8SURBVHhe7cEBDQAAAMKg90t52gU2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8GIN0gABR3xVFAAAAABJRU5ErkJggg==');"> <!-- Для примера или использован ваш файл -->
+<body class="bg-cover bg-center bg-no-repeat min-h-screen text-white font-sans flex flex-col items-center justify-center p-4">
 
-  <!-- Затемняющий и размывающий оверлей для лучшей читаемости текста -->
-  <div class="fixed inset-0 bg-black/20 backdrop-blur-[2px] pointer-events-none"></div>
+  <!-- Фикс для фона (для старых браузеров) -->
+  <div class="fixed inset-0 bg-black/25 backdrop-blur-[2px] pointer-events-none z-0"></div>
 
-  <div class="relative z-10 w-full max-w-sm text-center flex flex-col items-center gap-4 py-8 px-4 my-auto">
+  <div class="relative z-10 w-full max-w-sm text-center flex flex-col items-center gap-4 py-8 px-2 my-auto">
     
     <!-- Заголовок -->
-    <h1 class="text-2xl font-bold text-amber-300 drop-shadow-md">Привет, турист!</h1>
-    <p class="text-sm text-white drop-shadow">эта страничка создана специально для тебя. здесь ты найдешь:</p>
+    <h1 class="text-2xl font-bold text-amber-300 text-shadow">Привет, турист!</h1>
+    <p class="text-sm text-white text-shadow px-4">эта страничка создана специально для тебя. здесь ты найдешь:</p>
 
     <!-- Ссылка 1: Инстаграм -->
-    <div class="w-full mt-2">
-      <p class="text-xs mb-1.5 opacity-90 drop-shadow">наш инстаграм:</p>
+    <div class="w-full mt-3">
+      <p class="text-xs mb-1.5 opacity-90 text-shadow">наш инстаграм:</p>
       <a href="https://instagram.com/your_profile" target="_blank" 
-         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-medium py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95">
+         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-semibold py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95 text-sm min-w-[200px]">
         <svg class="w-4 h-4 text-pink-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram.com
       </a>
@@ -36,9 +43,9 @@
 
     <!-- Ссылка 2: Телеграм -->
     <div class="w-full">
-      <p class="text-xs mb-1.5 opacity-90 drop-shadow">наш телеграм:</p>
+      <p class="text-xs mb-1.5 opacity-90 text-shadow">наш телеграм:</p>
       <a href="https://t.me/your_channel" target="_blank" 
-         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-medium py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95">
+         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-semibold py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95 text-sm min-w-[200px]">
         <svg class="w-4 h-4 text-sky-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.536-.196 1.006.128.832.941z"/></svg>
         Telegram
       </a>
@@ -46,9 +53,9 @@
 
     <!-- Ссылка 3: Блогер -->
     <div class="w-full">
-      <p class="text-xs mb-1.5 opacity-90 drop-shadow">приморского тревел блогера:</p>
+      <p class="text-xs mb-1.5 opacity-90 text-shadow">приморского тревел блогера:</p>
       <a href="https://instagram.com/travel_blogger" target="_blank" 
-         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-medium py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95">
+         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-semibold py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95 text-sm min-w-[200px]">
         <svg class="w-4 h-4 text-pink-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram.com
       </a>
@@ -56,22 +63,6 @@
 
     <!-- Ссылка 4: 2ГИС -->
     <div class="w-full">
-      <p class="text-xs opacity-90 drop-shadow">и самое приятное:</p>
-      <p class="text-xs mb-1.5 opacity-90 drop-shadow">все точки для путешествия по Приморью в 2Гис</p>
-      <a href="https://2gis.ru/..." target="_blank" 
-         class="inline-flex items-center justify-center gap-2 bg-white/95 hover:bg-white text-gray-900 font-medium py-2.5 px-6 rounded-full shadow-lg transition transform active:scale-95">
-        <span class="text-green-600 font-bold text-sm">2GIS</span>
-        Открыть карту
-      </a>
-    </div>
-
-    <!-- Блок со скидкой и призывом -->
-    <div class="mt-4 text-xs leading-relaxed opacity-95 drop-shadow">
-      <p>а отметка нашего профиля в инстаграм подарит тебе 5% скидки (суммируется с системой лояльности)</p>
-      <p class="mt-2 font-semibold text-amber-200">хорошей дороги и незабываемых приключений!</p>
-    </div>
-
-  </div>
-
-</body>
-</html>
+      <p class="text-xs opacity-90 text-shadow">и самое приятное:</p>
+      <p class="text-xs mb-1.5 opacity-90 text-shadow">все точки для путешествия по Приморью в 2Гис</p>
+      <a href="
