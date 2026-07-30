@@ -7,79 +7,83 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .text-shadow-sm {
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     }
   </style>
 </head>
-<body class="bg-cover bg-center bg-no-repeat min-h-screen font-sans flex justify-center items-center p-0 m-0 text-white select-none" 
-      style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop');">
+<body class="min-h-screen font-sans flex justify-center items-center p-0 m-0 text-white select-none relative overflow-x-hidden bg-slate-900">
 
-  <!-- Размытие и затемнение фона (как в кастомных темах Linktree) -->
-  <div class="fixed inset-0 bg-black/20 backdrop-blur-[2px] pointer-events-none"></div>
+  <!-- 1. ЗАБЛЮРЕННАЯ ФОНОВАЯ КАРТИНКА -->
+  <div class="fixed inset-0 bg-cover bg-center bg-no-repeat blur-md scale-105 z-0" 
+       style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop');">
+  </div>
 
-  <!-- Главный контейнер стандарта Linktree (max-w-[480px]) -->
+  <!-- Легкое затемнение для контрастности шрифтов -->
+  <div class="fixed inset-0 bg-black/30 z-0 pointer-events-none"></div>
+
+  <!-- 2. КОНТЕНТ С УВЕЛИЧЕННЫМ ШРИФТОМ (max-w-[480px]) -->
   <main class="relative z-10 w-full max-w-[480px] min-h-screen sm:min-h-0 flex flex-col justify-between items-center px-6 py-10 my-auto text-center">
 
-    <!-- Верхний блок с заголовком -->
+    <!-- Заголовок -->
     <header class="w-full flex flex-col items-center gap-3">
-      <h1 class="text-2xl sm:text-3xl font-bold text-amber-300 text-shadow-sm tracking-wide">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-amber-300 text-shadow-sm tracking-wide">
         Привет, турист!
       </h1>
-      <p class="text-sm font-medium text-white/95 text-shadow-sm leading-snug max-w-[320px]">
+      <p class="text-base sm:text-lg font-medium text-white text-shadow-sm leading-snug max-w-[360px]">
         эта страничка создана специально для тебя. здесь ты найдешь:
       </p>
     </header>
 
-    <!-- Основной блок со ссылками -->
-    <section class="w-full flex flex-col items-center gap-5 my-6">
+    <!-- Кнопки -->
+    <section class="w-full flex flex-col items-center gap-6 my-6">
 
-      <!-- Кнопка 1 -->
+      <!-- Ссылка 1 -->
       <div class="w-full flex flex-col items-center">
-        <span class="text-xs font-medium text-white/90 text-shadow-sm mb-1.5">наш инстаграм:</span>
+        <span class="text-sm sm:text-base font-semibold text-white text-shadow-sm mb-2">наш инстаграм:</span>
         <a href="https://instagram.com/your_profile" target="_blank" 
-           class="w-full py-3.5 px-6 bg-white/95 hover:bg-white text-gray-900 font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2">
-          <svg class="w-4 h-4 text-pink-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+           class="w-full py-4 px-6 bg-white/95 hover:bg-white text-gray-900 font-bold text-base sm:text-lg rounded-full shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-pink-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Instagram.com
         </a>
       </div>
 
-      <!-- Кнопка 2 -->
+      <!-- Ссылка 2 -->
       <div class="w-full flex flex-col items-center">
-        <span class="text-xs font-medium text-white/90 text-shadow-sm mb-1.5">наш телеграм:</span>
+        <span class="text-sm sm:text-base font-semibold text-white text-shadow-sm mb-2">наш телеграм:</span>
         <a href="https://t.me/your_channel" target="_blank" 
-           class="w-full py-3.5 px-6 bg-white/95 hover:bg-white text-gray-900 font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2">
-          <svg class="w-4 h-4 text-sky-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.536-.196 1.006.128.832.941z"/></svg>
+           class="w-full py-4 px-6 bg-white/95 hover:bg-white text-gray-900 font-bold text-base sm:text-lg rounded-full shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-sky-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.536-.196 1.006.128.832.941z"/></svg>
           Telegram
         </a>
       </div>
 
-      <!-- Кнопка 3 -->
+      <!-- Ссылка 3 -->
       <div class="w-full flex flex-col items-center">
-        <span class="text-xs font-medium text-white/90 text-shadow-sm mb-1.5">приморского тревел блогера:</span>
+        <span class="text-sm sm:text-base font-semibold text-white text-shadow-sm mb-2">приморского тревел блогера:</span>
         <a href="https://instagram.com/travel_blogger" target="_blank" 
-           class="w-full py-3.5 px-6 bg-white/95 hover:bg-white text-gray-900 font-semibold text-sm rounded-full shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2">
-          <svg class="w-4 h-4 text-pink-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+           class="w-full py-4 px-6 bg-white/95 hover:bg-white text-gray-900 font-bold text-base sm:text-lg rounded-full shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-pink-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Instagram.com
         </a>
       </div>
 
-      <!-- Кнопка 4 -->
+      <!-- Ссылка 4 -->
       <div class="w-full flex flex-col items-center">
-        <span class="text-xs font-medium text-white/90 text-shadow-sm">и самое приятное:</span>
-        <span class="text-xs font-medium text-white/90 text-shadow-sm mb-1.5">все точки для путешествия по Приморью в 2Гис</span>
+        <span class="text-sm sm:text-base font-semibold text-white text-shadow-sm">и самое приятное:</span>
+        <span class="text-sm sm:text-base font-semibold text-white text-shadow-sm mb-2">все точки для путешествия по Приморью в 2Гис</span>
         <a href="https://2gis.ru/..." target="_blank" 
-           class="w-full py-3.5 px-6 bg-white/95 hover:bg-white text-gray-900 font-semibold text-sm rounded-full shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2">
-          <span class="text-emerald-600 font-bold text-xs tracking-wider border border-emerald-600 px-1.5 py-0.5 rounded">2GIS</span>
+           class="w-full py-4 px-6 bg-white/95 hover:bg-white text-gray-900 font-bold text-base sm:text-lg rounded-full shadow-lg transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2.5">
+          <span class="text-emerald-600 font-extrabold text-xs tracking-wider border border-emerald-600 px-1.5 py-0.5 rounded">2GIS</span>
           Открыть карту
         </a>
       </div>
 
     </section>
 
-    <!-- Нижний блок с анонсом скидки -->
-    <footer class="w-full text-xs leading-relaxed text-white/90 text-shadow-sm max-w-[340px]">
+    <!-- Акция -->
+    <footer class="w-full text-sm sm:text-base leading-relaxed text-white font-medium text-shadow-sm max-w-[360px] mt-2">
       <p>а отметка нашего профиля в инстаграм подарит тебе 5% скидки (суммируется с системой лояльности)</p>
-      <p class="mt-2 font-bold text-amber-200">хорошей дороги и незабываемых приключений!</p>
+      <p class="mt-2 font-extrabold text-amber-300 text-base sm:text-lg">хорошей дороги и незабываемых приключений!</p>
     </footer>
 
   </main>
